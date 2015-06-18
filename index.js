@@ -13,4 +13,4 @@ app.use(serve(__dirname + '/public'));
 
 require('./app/routes')(app);
 
-if (!module.parent) app.listen(3000);
+if (!module.parent) app.listen(process.env.PORT || 3000);
