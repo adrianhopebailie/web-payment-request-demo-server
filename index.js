@@ -9,6 +9,8 @@ var app = module.exports = koa();
 // initialize render helper
 app.use(views(config.template.path, config.template.options));
 
+app.use(serve(__dirname + '/public'));
+
 require('./app/routes')(app);
 
 if (!module.parent) app.listen(3000);

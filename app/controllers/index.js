@@ -5,7 +5,25 @@ module.exports = {
 	
 	view: function *index(next) {
 		yield this.render('index.ect', {
-			title: 'Render view template'
+			title: 'Payment Request API Demo',
+			paymentOptions: JSON.stringify([{
+		    "unsupportedType": "blah"
+		  }, {
+		    "@context": "https://schema.org/PaymentChargeSpecification",
+		    "appliesToPaymentMethod": "visa",
+		    "price": 100,
+		    "priceCurrency": "USD"
+		    // Account not specified because this is a pull
+		  }, {
+		    "@context": "https://schema.org/PaymentChargeSpecification",
+		    "appliesToPaymentMethod": "bitcoin",
+		    "price": .5,
+		    "priceCurrency": "BTC",
+		    "address": "...bitcoin pay-to address...",
+		    "outputs": [
+		      ["1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK", 15000]
+		    ]
+		  }])
 		});
 		yield next;
 	},

@@ -1,4 +1,53 @@
 <% extend 'app/views/layouts/template.ect' %>
 
-<h1>index.ect</h1>
-<p>This is view is located on <i>/app/views/index.ect</i></p>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+    <link href="../jsoneditor.min.css" rel="stylesheet" type="text/css">
+    <script src="../jsoneditor.min.js"></script>
+</head>
+<body>
+
+    <h1> Web Payment Request </h1>
+
+    <div id="jsoneditor" style="width: 400px; height: 400px;"></div>
+
+    <br>
+
+    <button id="submit" type="button" onclick="submitPaymentRequest();" style="background-color: #4CAF50; width: 300px; height: 60px;">
+      Submit Payment Request
+    </button>
+
+    <h1> Response </h1>
+
+    <div id="output" style="width: 400px; height: 400px;"></div>
+
+    <script>
+        // create the editor
+        var container = document.getElementById("jsoneditor");
+        var editor = new JSONEditor(container, {
+          search: false
+        });
+        var json = <%- @paymentOptions %>;
+        editor.set(json);
+        editor.expandAll();
+        editor.focus();
+
+        var outputContainer = document.getElementById("output");
+        var output = new JSONEditor(outputContainer, {
+          mode: 'view'
+        });
+        output.expandAll();
+
+        function submitPaymentRequest() {
+          var paymentOptions = editor.get();
+          window.requestPayment(paymentOptions, function(result) {
+            output.set(result);
+            output.focus();
+          })
+        }
+
+    </script>
+
+</body>
+</html>
