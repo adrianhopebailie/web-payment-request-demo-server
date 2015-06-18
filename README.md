@@ -1,54 +1,13 @@
-koa-starter
-===========
+# Web Payment Request Demo Server
 
-A simple Koajs application starter template. 
+A demo site that makes Web Payment Requests.
 
-quick start
-=============
+You must install the [Chrome extension](https://github.com/emschwartz/web-payment-request-chrome) for this to work.
 
-**Clone koa-starter:**
+## Getting started
 
-```sh
-$ git clone https://github.com/justmyfreak/koa-starter.git
-```
-
-**Install dependencies:**
-
-```sh
-$ npm install
-```
-
-**Run koa-starter:**
-
-```sh
-$ npm start
-```
-
-or 
-
-```sh
-$ node --harmony index.js
-```
-Open [http://localhost:3000](http://localhost:3000)
-
-**Run the test:**
-
-```sh
-$ npm test
-```
-
-Components
-==========
-
-koa-starter uses following npm package : 
-
-* `config` for config handling.
-* `koa-router` for request routing purpose.
-* `koa-static` for handling static content or assets.
-* `koa-views` for template switching.
-* `ect` for default templatin engine due to fast performance.
-
-Resources
-=========
-
-* [https://justmyfreak.com/koa-starter-a-koa-starting-template/](https://justmyfreak.com/koa-starter-a-koa-starting-template/)
+1. Clone this repo
+2. Run `npm install` to install dependencies
+3. Run `npm start` to start the server
+4. Open http://localhost:3000/render/view
+5. Try modifying the request, and click submit to send it to the Chrome extension
