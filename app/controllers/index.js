@@ -10,16 +10,16 @@ module.exports = {
 		    "unsupportedType": "blah"
 		  }, {
 		    "@context": "https://schema.org/PaymentChargeSpecification",
-		    "appliesToPaymentMethod": "visa",
+		    "appliesToPaymentMethod": "Visa",
 		    "price": 100,
 		    "priceCurrency": "USD"
 		    // Account not specified because this is a pull
 		  }, {
 		    "@context": "https://schema.org/PaymentChargeSpecification",
-		    "appliesToPaymentMethod": "bitcoin",
+		    "appliesToPaymentMethod": "Bitcoin",
 		    "price": .5,
 		    "priceCurrency": "BTC",
-		    "address": "...bitcoin pay-to address...",
+		    "address": "16UwLL9Risc3QfPqBUvKofHmBQ7wMtjvM",
 		    "outputs": [
 		      ["1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK", 15000]
 		    ]
